@@ -17,6 +17,9 @@ module.exports = function(req,res){
             //se va a acceder a mas-votadas
             index.masVotadas(req,res)
             break;    
+        case '/sucursales':
+            index.sucursales(req,res)
+        break;
         default:
             break;
     }

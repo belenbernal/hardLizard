@@ -2,7 +2,7 @@ const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
 const contacto = require('./contacto');
-const sucursales = require('/sucursales');
+const sucursales = require('./sucursales');
 
 module.exports = {
     homePage : function(req,res){
@@ -42,5 +42,20 @@ module.exports = {
         res.write ('\n\n')
         res.write(`​¿Tenés algo para contarnos? Nos encanta escuchar a nuestros clientes. Si deseas contactarnos podés escribirnos al siguiente email:dhmovies@digitalhouse.com o en las redes sociales. Envianos tu consulta, sugerencia o reclamo y será respondido a la brevedad posible. Recordá que también podes consultar la sección de Preguntas Frecuentes para obtener respuestas inmediatas a los problemas más comunes.`)
         res.end()
-    }  
+    }, 
+    sucursales : function(req,res) {
+        let sucursales = salas.sucursales().theaters;
+        res.write('SUCURSALES \n\n')
+        res.write("Contamos con " + salas.sucursales().total_theaters + " sucursales. \n\n")
+        sucursales.forEach(sucursal => {
+            res.write("Nombre: " + sucursal.name)
+            res.write("Dirección: " + sucursal.address)
+            res.write("Descripción: " + sucursal.description)
+            res.write("Cantidad de salas: " + sucursal.total_rooms)
+    });
+        res.end()
+    
     }
+    }
+
+
