@@ -1,5 +1,5 @@
 const homePage = require('./homepage');
-//const enCartelera = require('./enCartelera');
+const enCartelera = require('./enCartelera');
 
 module.exports = {
     homePage : function(req,res){
@@ -12,6 +12,16 @@ module.exports = {
         res.end()
     },
     enCartelera : function(req,res){
-
+        //titulo
+        res.write('----En cartelera----\n\n')
+        //cantidad de peliculas
+        res.write(`Total de Peliculas: ${enCartelera.leerJSON().total_movies} \n\n`)
+        //listado de peliculas con titulo y reseña
+        let movies = enCartelera.leerJSON()
+        movies.movies.forEach(movie => {
+           res.write('-Titulo: '+ movie.title + '\n')
+           res.write('-Reseña: '+ movie.overview + '\n\n')
+        })
+        res.end()
     }
 }
