@@ -14,7 +14,7 @@ module.exports = function(req,res){
             index.contacto(req,res)
            break;
         case '/mas-votadas':
-            //se va a acceder a la cartelera
+            //se va a acceder a mas-votadas
             index.masVotadas(req,res)
             break;    
         default:
