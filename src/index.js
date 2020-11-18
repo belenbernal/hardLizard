@@ -24,5 +24,10 @@ module.exports = {
             res.write("Rating: " + movie.vote_average + "\n\n");
         })
         res.end()
-    }
+    },
+    contacto: function (req, res) {
+        res.write(contacto.contacto())
+        //res.write("Contáctanos\n\n")
+        res.end()
+    },
 }
