@@ -10,6 +10,9 @@ module.exports = function(req,res){
             //se va a acceder a la cartelera
             index.enCartelera(req,res)
             break;
+        case '/contacto' :
+            index.contacto(req,res)
+           break;
         default:
             break;
     }
