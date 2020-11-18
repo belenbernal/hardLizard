@@ -2,6 +2,7 @@ const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
 const contacto = require('./contacto');
+const sucursales = require('/sucursales');
 
 module.exports = {
     homePage : function(req,res){
