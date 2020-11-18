@@ -1,6 +1,7 @@
 const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
+const contacto = require('./contacto');
 
 module.exports = {
     homePage : function(req,res){
