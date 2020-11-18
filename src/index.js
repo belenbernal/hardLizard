@@ -1,5 +1,6 @@
 const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
+const masVotadas = require('./masVotadas');
 
 module.exports = {
     homePage : function(req,res){
@@ -20,7 +21,17 @@ module.exports = {
         let movies = enCartelera.leerJSON()
         movies.movies.forEach(movie => {
            res.write('-Titulo: '+ movie.title + '\n')
-           res.write('-Reseña: '+ movie.overview + '\n\n')
+           res.write('-Reseña: '+ movie.overview + '\n\n')})
+        res.end()
+    },
+    masVotadas : function(req,res){
+        let votadas = masVotadas.masVotadas()
+        res.write("Más votadas\n\n")
+        res.write("Rating promedio: " + masVotadas.ratingPromedio() + "\n\n")
+        votadas.forEach(movie => {
+            res.write("Título: " + movie.title + "\n");
+            res.write("Descripción : " + movie.overview + "\n");
+            res.write("Rating: " + movie.vote_average + "\n\n");
         })
         res.end()
     }

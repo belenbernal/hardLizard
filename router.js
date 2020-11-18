@@ -10,6 +10,10 @@ module.exports = function(req,res){
             //se va a acceder a la cartelera
             index.enCartelera(req,res)
             break;
+        case '/mas-votadas':
+            //se va a acceder a la cartelera
+            index.masVotadas(req,res)
+            break;    
         default:
             break;
     }
