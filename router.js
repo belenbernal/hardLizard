@@ -20,6 +20,9 @@ module.exports = function(req,res){
         case '/sucursales':
             index.sucursales(req,res)
         break;
+        case '/preguntas-frecuentes':
+            index.preguntasFrecuentes(req,res)
+        break;
         default:
             break;
     }

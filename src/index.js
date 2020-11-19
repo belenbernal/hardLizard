@@ -3,6 +3,8 @@ const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
 const contacto = require('./contacto');
 const sucursales = require('./sucursales');
+const preguntas = require('./preguntasFrecuentes');
+const { faqsJSON } = require('./preguntasFrecuentes');
 
 module.exports = {
     homePage : function(req,res){
@@ -55,6 +57,18 @@ module.exports = {
     });
         res.end()
     
+    },
+    preguntasFrecuentes: function(req,res) {
+        let faqs = preguntas.faqsJSON()
+        res.write('Preguntas Frecuentes.')
+        res.write('\n\n')
+        res.write('Total de preguntas: ' + faqs.total_faqs)
+        res.write('\n\n')
+    faqs.faqs.forEach(faqs => {
+                        res.write("-Pregunta: " + faqs.faq_title + "\n");
+                        res.write("-Respuesta: " + faqs.faq_answer + "\n\n");
+                    });   
+     res.end()   
     }
     }
 
