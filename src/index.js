@@ -48,10 +48,14 @@ module.exports = {
         res.write('SUCURSALES \n\n')
         res.write("Contamos con " + salas.sucursales().total_theaters + " sucursales. \n\n")
         sucursales.forEach(sucursal => {
-            res.write( "Nombre: " + sucursal.name + '\n' )
-            res.write("Dirección: " + sucursal.address + '\n')
-            res.write("Descripción: " + sucursal.description + '\n')
-            res.write("Cantidad de salas: " + sucursal.total_rooms + '\n'+ '\n')
+            res.write( "- Nombre: "+ '[' + sucursal.name + ']' + '\n' )
+            
+            res.write("-- Dirección: " + '[[' + sucursal.address + ']]' + '\n')
+            
+            res.write("--- Descripción: " + sucursal.description + '\n')            
+            res.write("Cantidad de salas: " + '[' + sucursal.total_rooms + ']' + '\n'+ '\n')
+            res.write('------------------------------------------------------------------------------------------\n')
+           
     });
         res.end()
     
