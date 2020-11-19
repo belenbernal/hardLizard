@@ -1,10 +1,8 @@
 const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
-const contacto = require('./contacto');
 const sucursales = require('./sucursales');
 const preguntas = require('./preguntasFrecuentes');
-const { faqsJSON } = require('./preguntasFrecuentes');
 
 module.exports = {
     homePage : function(req,res){
