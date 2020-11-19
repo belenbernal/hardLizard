@@ -1,7 +1,7 @@
 const homePage = require('./homepage');
 const enCartelera = require('./enCartelera');
 const masVotadas = require('./masVotadas');
-const sucursales = require('./sucursales');
+const salas = require('./sucursales');
 const preguntas = require('./preguntasFrecuentes');
 
 module.exports = {
@@ -48,10 +48,10 @@ module.exports = {
         res.write('SUCURSALES \n\n')
         res.write("Contamos con " + salas.sucursales().total_theaters + " sucursales. \n\n")
         sucursales.forEach(sucursal => {
-            res.write("Nombre: " + sucursal.name)
-            res.write("Dirección: " + sucursal.address)
-            res.write("Descripción: " + sucursal.description)
-            res.write("Cantidad de salas: " + sucursal.total_rooms)
+            res.write( "Nombre: " + sucursal.name + '\n' )
+            res.write("Dirección: " + sucursal.address + '\n')
+            res.write("Descripción: " + sucursal.description + '\n')
+            res.write("Cantidad de salas: " + sucursal.total_rooms + '\n'+ '\n')
     });
         res.end()
     
